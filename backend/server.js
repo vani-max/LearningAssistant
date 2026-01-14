@@ -34,6 +34,8 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus: 200
 }));
+// app.options("/*", cors());
+
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
@@ -59,7 +61,7 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
 process.on('unhandledRejection', (err) => {
