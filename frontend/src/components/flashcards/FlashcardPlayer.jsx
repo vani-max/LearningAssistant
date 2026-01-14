@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 const FlashcardPlayer = ({ cards = [] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
-    const [rating, setRating] = useState(null); // Simple self-rating
+    const [rating, setRating] = useState(null);
 
     if (!cards || cards.length === 0) {
         return <div className="text-center p-8 text-gray-500">No cards in this deck.</div>;

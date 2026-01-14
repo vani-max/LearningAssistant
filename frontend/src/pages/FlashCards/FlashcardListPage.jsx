@@ -12,7 +12,7 @@ const FlashcardListPage = () => {
         const fetchSets = async () => {
             try {
                 const data = await flashcardService.getAllFlashcardSets();
-                setSets(data.sets || []);
+                setSets(data.data || []);
             } catch (error) {
                 console.error(error);
             } finally {
@@ -55,8 +55,8 @@ const FlashcardListPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {sets.map((set) => (
                         <div
-                            key={set.documentId}
-                            onClick={() => navigate(`/documents/${set.documentId}/flashcards`)}
+                            key={set.documentId._id}
+                            onClick={() => navigate(`/documents/${set.documentId._id}/flashcards`)}
                             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition cursor-pointer group"
                         >
                             <div className="flex items-center space-x-4 mb-4">
@@ -64,7 +64,7 @@ const FlashcardListPage = () => {
                                     <Zap size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-800 line-clamp-1">{set.documentTitle}</h3>
+                                    <h3 className="font-bold text-gray-800 line-clamp-1">{set.documentId.title}</h3>
                                     <p className="text-xs text-gray-500">Flashcard Deck</p>
                                 </div>
                             </div>

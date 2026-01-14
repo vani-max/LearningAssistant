@@ -17,6 +17,7 @@ const FlashcardsPage = () => {
         const fetchCards = async () => {
             try {
                 const data = await flashcardService.getFlashcards(id);
+                console.log("Flashcard Fetch Response:", data);
                 setCards(data.data?.[0]?.cards || []);
             } catch (error) {
                 console.error(error);
