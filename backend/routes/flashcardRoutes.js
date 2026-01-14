@@ -20,7 +20,7 @@ router.post('/:cardId/review', reviewFlashcard);
 router.put('/:cardId/star', toggleStarFlashcard);
 router.put('/:cardId/star', toggleStarFlashcard);
 router.delete('/:id', deleteFlashcardSet);
-router.post('/create', createFlashcard);
+router.post('/', createFlashcard);
 router.delete('/:setId/cards/:cardId', deleteFlashcard);
 
 export default router;
