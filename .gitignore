@@ -1,3 +1,7 @@
 node_modules/
 .env
 .DS_Store
+
+
+# Debug scripts
+backend/debugFlashcards.js
