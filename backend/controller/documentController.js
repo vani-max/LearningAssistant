@@ -23,8 +23,7 @@ export const uploadDocument = async (req, res, next) => {
       return res.status(400).json({ message: "Title is required" });
     }
 
-    const baseUrl =
-      process.env.BACKEND_URL || `${req.protocol}://${req.get("host")}`;
+    const baseUrl = process.env.BACKEND_URL;
 
     const fileUrl = `${baseUrl}/uploads/documents/${req.file.filename}`;
 
