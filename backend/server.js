@@ -19,10 +19,8 @@ const app = express();
 
 connectDB();
 
-
-
 const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL.split(',')
+  ? process.env.FRONTEND_URL.split(",")
   : [];
 
 app.use(cors({
@@ -37,9 +35,9 @@ app.use(cors({
     return callback(null, true); 
   },
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
-app.options("*", cors());
 
 
 app.use(express.json());
